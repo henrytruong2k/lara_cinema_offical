@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Ve;
+use App\Ghe;
+use App\SuatChieu;
 
 class VeController extends Controller
 {
@@ -35,7 +37,10 @@ class VeController extends Controller
         $ve->suatchieu_id = $request->suatchieu_id;
         $ve->ghe_id = $request->ghe_id;
         $ve->kh_id = $request->kh_id;
-        $ve->GiaVe = 20000;
+        $suat=SuatChieu::find($ve->suatchieu_id);
+        $ghe=Ghe::find($ve->ghe_id);
+
+        $ve->GiaVe = $suat->GiaSuatChieu+$ghe->GiaGhe;
         $flag = $ve->save();
         if($flag)
         {
