@@ -46,7 +46,7 @@ Route::resource('positions', 'Admin\ChucVuController')->middleware('login');
 Route::resource('customers', 'Admin\KhachHangController')->middleware('login');
 
 
-Route::group(['prefix' => 'SuatChieu','middleware'=>'login'], function() {
+Route::group(['prefix' => 'SuatChieu'], function() {
     Route::get('/index','SuatChieuController@index')->name('SuatChieu.index');
     Route::get('/create','SuatChieuController@create');
     Route::post('/create','SuatChieuController@store')->name('SuatChieu.add');
