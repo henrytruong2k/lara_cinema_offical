@@ -32,7 +32,7 @@ class BinhLuanController extends Controller
         $binhluan = new BinhLuan();
         $binhluan->phim_id = $request->phim_id;
         $binhluan->khachhang_id = $request->khachhang_id;
-        $binhluan->NgayBinhLuan  = $request->NgayBinhLuan;
+        //$binhluan->NgayBinhLuan  = $request->NgayBinhLuan;
         $binhluan->NoiDung = $request->NoiDung;
         $flag = $binhluan->save();
         if($flag)
@@ -66,12 +66,16 @@ class BinhLuanController extends Controller
 
     public function getFive($phim_id)
     {
-        $data = BinhLuan::with('phim','khachhang')->where('TrangThai',1)->where('phim_id', $phim_id)->get();
-        $list = array();
-        for( $i = 0; $i < 5; $i++)
-        {
-            array_push($list, $data[$i]);
-        }
+//         $data = BinhLuan::with('phim','khachhang')->where('TrangThai',1)->where('phim_id', $phim_id)->get();
+//         $list = array();
+//         for( $i = 0; $i < 5; $i++)
+//         {
+//             array_push($list, $data[$i]);
+//         }
+//         return json_encode($data);
+        $data = BinhLuan::with('phim','khachhang')->where('TrangThai',1)->where('phim_id', $phim_id)
+        ->where("TrangThai",1)->limit(5)->get();
+    
         return json_encode($data);
     }
     /**
