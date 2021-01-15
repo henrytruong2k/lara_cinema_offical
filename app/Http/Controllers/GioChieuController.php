@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Giochieu;
+use App\GioChieu;
 use App\LoaiTGChieu;
 
 class GioChieuController extends Controller
