@@ -38,6 +38,12 @@
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
+                                    @if ($message = Session::get('success'))
+                                        <div class="alert alert-warning alert-block">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                                <strong>{{ $message }}</strong>
+                                        </div>
+                                    @endif
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Đăng nhập</h1>
                                     </div>
@@ -53,11 +59,13 @@
                                             name="pass" placeholder="Mật khẩu">
                                         </div>
                                         
+                                      
+                                        
                                         <button class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
 
-
+                                    
                                     </form>
                                     <hr>
 
