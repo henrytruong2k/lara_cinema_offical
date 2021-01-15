@@ -16,7 +16,7 @@ class BackController extends Controller
          }
          else
          {
-             return redirect("/login");
+             return redirect("/login")->with('success','Đăng nhập thất bại');
          }
 
     }
