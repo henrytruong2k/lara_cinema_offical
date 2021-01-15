@@ -37,7 +37,7 @@ class SuatChieuController extends Controller
         //return json_encode($request->NgayChieu);
         $list = SuatChieu::join('gio_chieus', 'suat_chieus.giochieu_id', '=', 'gio_chieus.id')
         ->join('phongs', 'phongs.id', '=', 'suat_chieus.phong_id')
-        ->select('giochieu_id','gio_chieus.GioBatDau','suat_chieus.id','suat_chieus.phong_id')
+        ->select('giochieu_id','gio_chieus.GioBatDau','suat_chieus.id','suat_chieus.phong_id', 'suat_chieus.GiaSuatChieu')
         ->where('phongs.rap_id',$rap_id)->where('phim_id',$phim_id)->where('NgayChieu',$ngay)->get();
         return json_encode($list);    
     }
