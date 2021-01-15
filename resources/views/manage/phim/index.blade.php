@@ -340,7 +340,7 @@
                                 <td>{{$item->TenPhim}}</td>
                                 <td>{{$item->DaoDien}}</td>
                                 <td>{{$item->ThoiLuong}} Phút</td>
-                                <td><img width="100px" height="80px" src="http://localhost:8000/data/{{$item->HinhAnh}}" alt=""></td>
+                                <td><img width="100px" height="80px" src={{url('/data/'.$item->HinhAnh)}}" alt=""></td>
                                 <td>
                                     @php
                                     if($item->TrangThai==1){
