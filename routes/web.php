@@ -33,7 +33,7 @@ Route::get('/register', function () {
     return view('manage.register');
 });
 
-Route::post('/register', 'Admin\AccountController@register')->middleware('login');
+Route::post('/register', 'Admin\AccountController@register');
 
 Route::get('/table', function () {
     return view('manage.table');
