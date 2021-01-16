@@ -61,4 +61,6 @@ Route::apiResource('/Tinh','Api\TinhController');
 // dang ky khach hàng
 Route::post("/KhachHang_Dk",'Api\KhachHangController@KhachHang_Regis');
 
+Route::get("/Ve_LichSu/{id_kh}","Api\VeController@GetLichSu");
+
 
