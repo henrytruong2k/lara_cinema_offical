@@ -18,7 +18,7 @@ class PhimController extends Controller
      */
     public function index()
     {    
-        $list['phims']= Phim::with('theloais')->where('TrangThai',1)->paginate(5);
+        $list['phims']= Phim::with('theloais')->where('TrangThai',1)->orderBy('id', 'asc')->paginate(5);
         return view('manage.phim.index')->with($list);
     }
 
@@ -222,11 +222,12 @@ class PhimController extends Controller
         if(empty($request->HinhAnh)==false)
         {
             $temp= substr($request->HinhAnh, 12); 
-            $phim->HinhAnh="http://localhost:8000/data/".$temp;
+//             $phim->HinhAnh="http://localhost:8000/data/".$temp;
+            $phim->HinhAnh="http://cinema-cdth18c.herokuapp.com/data/".$temp;
         }
              
         $flag= $phim->save();
-        $data= Phim::where('TrangThai',1)->get();
+        $data= Phim::where('TrangThai',1)->orderBy('id', 'asc')->get();
 
         if($flag){
             return json_encode($data);
