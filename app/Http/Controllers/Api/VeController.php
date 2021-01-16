@@ -89,4 +89,15 @@ class VeController extends Controller
     {
         //
     }
+    public function GetLichSu($id_kh)
+    {
+      
+        $data = Ve::join('khach_hangs', 'ves.kh_id', '=', 'khach_hangs.id')
+        ->join('suat_chieus', 'ves.suatchieu_id', '=', 'suat_chieus.id')
+        ->join('ghes', 'ves.ghe_id', '=', 'ghes.id')->join('gio_chieus','gio_chieus.id',"suat_chieus.giochieu_id")->join("phims","phims.id","suat_chieus.phim_id")->where("kh_id",$id_kh)
+        ->select('ves.id','khach_hangs.HoTen','suat_chieus.NgayChieu','ghes.Day','ghes.sort','GiaVe','phims.TenPhim',
+        'suat_chieus.giochieu_id','gio_chieus.GioBatDau')
+        ->get();
+        return response()->json($data);
+    }
 }
