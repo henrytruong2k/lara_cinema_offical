@@ -1,3 +1,17 @@
+<h3>Live demo: <a href="http://cinema-cdth18c.herokuapp.com/login">LINK</a></h3> 
+
+## Accounts for test: 
+<p>Account: <b>quanghuy</b></p>
+<p>Password: <b>quanghuy</b></p>
+<br>
+<p>Account: <b>quoctrong</b></p>
+<p>Password: <b>quoctrong</b></p>
+<br>
+<p>Account: <b>minhhai</b></p>
+<p>Password: <b>minhhai</b></p>
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
